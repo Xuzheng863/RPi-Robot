@@ -3,10 +3,10 @@ from atlasbuggy.serial.object import SerialObject
 
 class Actuators(SerialObject):
     def __init__(self, enabled=True):
-        self.speed_increment = None
-        self.speed_delay = None
+        self.speed_increment = 10
+        self.speed_delay = 1
 
-        super(Actuators, self).__init__("naboris actuators", enabled)
+        super(Actuators, self).__init__("leona actuators", enabled)
 
     def receive_first(self, packet):
         data = packet.split("\t")

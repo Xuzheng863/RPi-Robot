@@ -27,17 +27,19 @@ class Pipeline(CvPipeline):
 
     def take(self):
         self.capture = self.streams["capture"]
-        # self.actuators = self.streams["actuators"]
+        self.actuators = self.streams["actuators"]
 
     def haar(self, frame):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        F_faces = F_face_cascade.detectMultiScale(gray, 1.3, 5)
+        F_faces = self.F_face_cascade.detectMultiScale(gray, 1.3, 5)
         # U_bodies = U_body_cascade.detectMultiScale(gray, 1.3, 5)
 
         (x_0, y_0, w_0, h_0) = (0, 0, 0, 0)
         for (x, y, w, h) in F_faces:
             if (w > w_0 & h > h_0):
                 (x_0, y_0, w_0, h_0) = (x, y, w, h)
+
+        return (x_0, y_0, w_0, h_0)
 
 
 
@@ -49,4 +51,8 @@ class Pipeline(CvPipeline):
 
         # cv2.imshow('img', frame)
 
-    def pipeline(self):
+    def pipeline(self, frame):
+        (x_0, y_0, w_0, h_0) = self.haar(frame)
+        if (w_0>0 & h_0>0):
+            self.actuators.drive(200,0,0)
+            return (x_0, y_0, w_0, h_0)

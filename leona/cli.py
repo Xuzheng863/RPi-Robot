@@ -1,15 +1,15 @@
 from atlasbuggy.cmdline import CommandLine
 
 
-class cmdline(CommandLine):
+class CMDline(CommandLine):
     def __init__(self, enabled=True):
-        super(cmdline, self).__init__(enabled)
-        self.robot = None
+        super(CMDline, self).__init__(enabled)
+        self.leona = None
         self.actuators = None
 
     def take(self):
-        self.robot = self.streams["robot"]
-        self.actuators = self.robot.actuators
+        self.leona = self.streams["robot"]
+        self.actuators = self.leona.actuators
 
     def spin_left(self, params):
         value = int(params) if len(params) > 0 else 75
