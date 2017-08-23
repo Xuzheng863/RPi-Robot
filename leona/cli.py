@@ -1,14 +1,27 @@
-from atlasbuggy.cmdline import CommandLine
+import re
+import os
+from atlasbuggy.extras.cmdline import CommandLine
 
 
 class CMDline(CommandLine):
-    def __init__(self, enabled=True):
-        super(CMDline, self).__init__(enabled)
+    def __init__(self, enabled=True, log_level=None):
+        super(CMDline, self).__init__(enabled, log_level)
         self.leona = None
         self.actuators = None
+        self.capture = None
 
-    def take(self):
-        self.leona = self.streams["robot"]
+        self.leona_tag = "leona"
+        self.capture_tag = "capture"
+
+        self.video_num_counter_regex = r"([\s\S]*)-([0-9]*)\.([\S]*)"
+        self.video_name_regex = r"([\s\S]*)\.([\S]*)"
+
+        self.require_subscription(self.leona_tag)
+        self.require_subscription(self.capture_tag)
+
+    def take(self, subscriptions):
+        self.leona = subscriptions[self.leona_tag].get_stream()
+        self.capture = subscriptions[self.capture_tag].get_stream()
         self.actuators = self.leona.actuators
 
     def spin_left(self, params):
@@ -21,7 +34,7 @@ class CMDline(CommandLine):
 
     def drive(self, params):
         angle = 0
-        speed = 75
+        speed = 200
         angular = 0
         if len(params) > 1:
             values = params.split(" ")
@@ -39,11 +52,43 @@ class CMDline(CommandLine):
                 print("Failed to parse input:", repr(values))
         self.actuators.drive(speed, angle, angular)
 
+    def set_autonomous(self, params=None):
+        self.logger.debug("Enabling autonomous mode")
+        self.leona.autonomous = True
+        self.actuators.stop()
+
+    def set_manual(self, params=None):
+        self.logger.debug("Enabling manual mode")
+        self.leona.autonomous = False
+        self.actuators.stop()
+
     def my_exit(self, params):
-        self.exit_all()
+        self.exit()
 
     def my_stop(self, params):
         self.actuators.stop()
+
+    def start_new_video(self, params):
+        if not self.capture.is_recording:
+            matches = re.findall(self.video_num_counter_regex, self.capture.file_name)
+            if len(matches) == 0:
+                name_matches = re.findall(self.video_name_regex, self.capture.file_name)
+                file_name_no_ext, extension = name_matches[0]
+                new_file_name = "%s-1.%s" % (file_name_no_ext, extension)
+            else:
+                file_name_no_ext, counter, extension = matches[0]
+                counter = int(counter) + 1
+                new_file_name = "%s-%s.%s" % (file_name_no_ext, counter, extension)
+
+            self.capture.start_recording(new_file_name, self.capture.directory)
+        else:
+            print("PiCamera already recording")
+
+    def stop_recording(self, params):
+        if self.capture.is_recording:
+            self.capture.stop_recording()
+        else:
+            print("PiCamera already stopped recording")
 
     def check_commands(self, line, **commands):
         function = None
@@ -64,4 +109,8 @@ class CMDline(CommandLine):
                 r=self.spin_right,
                 d=self.drive,
                 s=self.my_stop,
+                start_video=self.start_new_video,
+                stop_video=self.stop_recording,
+                manual=self.set_manual,
+                auton=self.set_autonomous
             )

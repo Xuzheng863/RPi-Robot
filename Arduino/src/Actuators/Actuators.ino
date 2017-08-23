@@ -2,7 +2,7 @@
 This is a test sketch for the Adafruit assembled Motor Shield for Arduino v2
 It won't work with v1.x motor shields! Only for the v2's with built in PWM
 control
-
+p0
 For use with the Adafruit Motor Shield v2
 ---->	http://www.adafruit.com/products/1438
 
@@ -110,11 +110,11 @@ void set_motor_goal(int motor_num, int speed, int offset) {
 }
 
 // top left, top right, bottom left, bottom right
-void set_motor_goals(int speed1, int speed2, int speed4, int speed3)
+void set_motor_goals(int speed2, int speed3, int speed1, int speed4)
 {
-    set_motor_goal(0, speed1, TOPRIGHT_OFFSET);  // top right
-    set_motor_goal(1, speed2, TOPLEFT_OFFSET);  // top left
-    set_motor_goal(2, speed3, BOTLEFT_OFFSET);  // bottom left
+    set_motor_goal(0, speed1, BOTLEFT_OFFSET);  // top left
+    set_motor_goal(1, speed2, TOPLEFT_OFFSET);  // top right
+    set_motor_goal(2, speed3, TOPRIGHT_OFFSET);  // bottom left
     set_motor_goal(3, speed4, BOTRIGHT_OFFSET);  // bottom right
 }
 

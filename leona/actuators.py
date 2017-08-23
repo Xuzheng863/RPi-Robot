@@ -6,7 +6,7 @@ class Actuators(SerialObject):
         self.speed_increment = 10
         self.speed_delay = 1
 
-        super(Actuators, self).__init__("leona actuators", enabled)
+        super(Actuators, self).__init__("actuators", enabled)
 
     def receive_first(self, packet):
         data = packet.split("\t")
