@@ -21,13 +21,13 @@ class LeonaPipeline(Pipeline):
     def pipeline(self,frame):
         original_frame = frame.copy()
         frame = self.face_detector.haar(frame)
-        self.post((self.face, self.face_size), service=self.results_service_tag)
+        self.post((self.face_detector.face, self.face_detector.face_size), service=self.results_service_tag)
 
 class FaceDetector:
     def __init__(self, logger):
         self.frame = None
         self.logger = logger
-        self.F_face_cascade = cv2.CascadeClassifier('...haarcascades\haarcascade_frontalface_default.xml')
+        self.F_face_cascade = cv2.CascadeClassifier('/home/pi/opencv-3.1.0/data/haarcascades/haarcascade_frontalface_default.xml')
         self.face = None
         self.face_size = None
         self.roi_color = None
