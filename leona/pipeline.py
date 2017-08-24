@@ -19,6 +19,7 @@ class LeonaPipeline(Pipeline):
 
     def pipeline(self,frame):
         frame = self.face_detector.haar(frame)
+        # print(self.face_detector.face, self.face_detector.face_size)
         self.post((self.face_detector.face, self.face_detector.face_size), service=self.results_service_tag)
 
 class FaceDetector:

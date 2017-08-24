@@ -45,8 +45,8 @@ class PiCamera(ThreadedStream):
 
         self.capture.resolution = (640, 480)
         self.capture.framerate = self.fps
-        self.capture.hflip = True
-        self.capture.vflip = True
+        self.capture.hflip = False
+        self.capture.vflip = False
 
         self.width = self.capture.resolution[0]
         self.height = self.capture.resolution[1]

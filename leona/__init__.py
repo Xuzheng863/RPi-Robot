@@ -18,7 +18,7 @@ class Leona(SerialStream):
         self.link_callback(self.actuators, self.receive_actuators)
         self.demo = demo
 
-        self.autonomous = False
+        self.autonomous = True
 
         self.pipeline_results = None
         self.pipeline_feed = None
@@ -38,27 +38,32 @@ class Leona(SerialStream):
         spin_direction = 150
         safe_w = (160, 480)
         safe_h = (120, 360)
-        default_size = 10000
+        default_size = 3000
         size_scale = 0.8
         while self.is_running():
             if self.pipeline_results is not None:
+                print(self.pipeline_results)
                 (face, face_size) = self.pipeline_results
                 if self.autonomous:
-                    if face == None:
+                    if face is None:
                         status = "search"
-                        self.actuators.stop()
+                        self.actuators.spin(100)
                     else:
                         status = "adjusting"
                         (x, y, w, h) = face
                         c = (x + w / 2, y + h / 2)
                         if c[0] < safe_w[0]:
-                            self.actuators.spin(-100)
+                            # self.actuators.spin(-100)
+                            self.actuators.stop()
                         elif c[0] > safe_w[1]:
-                            self.actuators.spin(100)
+                            # self.actuators.spin(100)
+                            self.actuators.stop()
                         elif face_size < default_size * size_scale:
-                            self.actuators.drive(200, 0, 0)
+                            # self.actuators.drive(200, 0, 0)
+                            self.actuators.stop()
                         elif face_size > default_size / size_scale:
-                            self.actuators.drive(-200, 0, 0)
+                            # self.actuators.drive(-200, 0, 0)
+                            self.actuators.stop()
                         else:
                             self.status = "steady"
                             self.actuators.stop()
