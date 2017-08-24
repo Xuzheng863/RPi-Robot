@@ -1,0 +1,309 @@
+[Robot @ robot.py:101][DEBUG] 2017-08-24 15:14:00,888: Logging to: logs/2017_Aug_24/15;14;00.log
+[Robot @ robot.py:58][DEBUG] 2017-08-24 15:14:00,890: logger initialized: file_name: 15;14;00.log, directory: logs/2017_Aug_24, write: True, log_level: 30
+[Leona @ datastream.py:130][DEBUG] 2017-08-24 15:14:00,914: 'Leona' receiving feed from 'LeonaPipeline' requesting 'results' service
+[CMDline @ datastream.py:130][DEBUG] 2017-08-24 15:14:00,915: 'CMDline' subscribing to 'Leona' 
+[CMDline @ datastream.py:130][DEBUG] 2017-08-24 15:14:00,916: 'CMDline' subscribing to 'PiCamera' 
+[LeonaPipeline @ datastream.py:130][DEBUG] 2017-08-24 15:14:00,916: 'LeonaPipeline' receiving updates from 'PiCamera' 
+[Robot @ robot.py:117][DEBUG] 2017-08-24 15:14:00,917: Active streams: [PiCamera(), Leona(), LeonaPipeline(), CMDline()]
+[Robot @ robot.py:255][DEBUG] 2017-08-24 15:14:00,918: Asynchronous streams: [Leona(), CMDline()]
+[Robot @ robot.py:256][DEBUG] 2017-08-24 15:14:00,920: Threaded streams: [PiCamera(), LeonaPipeline()]
+[Robot @ robot.py:257][DEBUG] 2017-08-24 15:14:00,920: Static streams: []
+[Robot @ robot.py:152][DEBUG] 2017-08-24 15:14:00,921: Applying subscriptions
+[PiCamera @ datastream.py:214][DEBUG] 2017-08-24 15:14:00,921: Checking subscriptions
+[PiCamera @ datastream.py:432][DEBUG] 2017-08-24 15:14:00,922: applying subscriptions: {}
+[Leona @ datastream.py:214][DEBUG] 2017-08-24 15:14:00,922: Checking subscriptions
+[Leona @ datastream.py:432][DEBUG] 2017-08-24 15:14:00,923: applying subscriptions: {'pipeline': Feed(tag='pipeline', producer_stream=LeonaPipeline, consumer_stream=Leona)}
+[LeonaPipeline @ datastream.py:214][DEBUG] 2017-08-24 15:14:00,924: Checking subscriptions
+[LeonaPipeline @ datastream.py:432][DEBUG] 2017-08-24 15:14:00,924: applying subscriptions: {'capture': Update(tag='capture', producer_stream=PiCamera, consumer_stream=LeonaPipeline)}
+[CMDline @ datastream.py:214][DEBUG] 2017-08-24 15:14:00,925: Checking subscriptions
+[CMDline @ datastream.py:432][DEBUG] 2017-08-24 15:14:00,926: applying subscriptions: {'leona': Subscription(tag='leona', producer_stream=Leona, consumer_stream=CMDline), 'capture': Subscription(tag='capture', producer_stream=PiCamera, consumer_stream=CMDline)}
+[Robot @ robot.py:157][DEBUG] 2017-08-24 15:14:00,926: Starting streams, threads have started
+[Robot @ robot.py:159][DEBUG] 2017-08-24 15:14:00,927: Calling PiCamera's start
+[PiCamera @ datastream.py:442][DEBUG] 2017-08-24 15:14:00,927: starting
+[PiCamera @ datastream.py:457][DEBUG] 2017-08-24 15:14:01,464: calling run
+[Robot @ robot.py:159][DEBUG] 2017-08-24 15:14:01,465: Calling Leona's start
+[Leona @ datastream.py:442][DEBUG] 2017-08-24 15:14:01,466: starting
+[Leona @ stream.py:319][DEBUG] 2017-08-24 15:14:01,551: Discovered ports: [SerialPort(port_address=/dev/ttyACM0)]
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:03,559: frame #0
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:03,681: frame #1
+[Leona @ stream.py:357][DEBUG] 2017-08-24 15:14:03,799: [/dev/ttyACM0] has ID 'actuators'
+[Leona @ stream.py:580][DEBUG] 2017-08-24 15:14:03,800: <-, actuators, 10	1, object>
+[Leona @ stream.py:272][DEBUG] 2017-08-24 15:14:03,801: First packets sent
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:03,824: frame #2
+[Robot @ robot.py:159][DEBUG] 2017-08-24 15:14:03,834: Calling LeonaPipeline's start
+[LeonaPipeline @ datastream.py:442][DEBUG] 2017-08-24 15:14:03,842: starting
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:03,939: frame #3
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:04,070: frame #4
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:04,197: frame #5
+[LeonaPipeline @ datastream.py:457][DEBUG] 2017-08-24 15:14:04,246: calling run
+[Robot @ robot.py:159][DEBUG] 2017-08-24 15:14:04,248: Calling CMDline's start
+[CMDline @ datastream.py:442][DEBUG] 2017-08-24 15:14:04,249: starting
+[Robot @ robot.py:163][DEBUG] 2017-08-24 15:14:04,282: Calling setup_fn
+[Robot @ robot.py:128][DEBUG] 2017-08-24 15:14:04,283: Starting coroutine
+[Leona @ stream.py:580][DEBUG] 2017-08-24 15:14:04,300: <2017-08-24 15:14:04,299667, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:04,375: frame #6
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:04,485: frame #7
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:04,596: frame #8
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:04,777: frame #9
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:04,906: frame #10
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,043: frame #11
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,195: frame #12
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,325: frame #13
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,490: frame #14
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,621: frame #15
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,749: frame #16
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,852: frame #17
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:05,979: frame #18
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,119: frame #19
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,210: frame #20
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,328: frame #21
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,499: frame #22
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,612: frame #23
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,674: frame #24
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,800: frame #25
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,904: frame #26
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:06,976: frame #27
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:07,139: frame #28
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:07,296: frame #29
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:07,400: frame #30
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:07,542: frame #31
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:07,703: frame #32
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:07,860: frame #33
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,015: frame #34
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,151: frame #35
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,338: frame #36
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,465: frame #37
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,633: frame #38
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,752: frame #39
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,869: frame #40
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:08,964: frame #41
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:09,134: frame #42
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:09,271: frame #43
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:09,314: frame #44
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:09,448: frame #45
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:09,628: frame #46
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:09,754: frame #47
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:09,898: frame #48
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,015: frame #49
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,134: frame #50
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,273: frame #51
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,426: frame #52
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,578: frame #53
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,721: frame #54
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,836: frame #55
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:10,955: frame #56
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:11,054: frame #57
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:11,207: frame #58
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:11,321: frame #59
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:11,443: frame #60
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:11,592: frame #61
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:11,754: frame #62
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:11,958: frame #63
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:12,090: frame #64
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:12,229: frame #65
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:12,431: frame #66
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:12,561: frame #67
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:12,702: frame #68
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:12,896: frame #69
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,074: frame #70
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,247: frame #71
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,374: frame #72
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,531: frame #73
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,679: frame #74
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,785: frame #75
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,890: frame #76
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:13,946: frame #77
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,064: frame #78
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,216: frame #79
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,283: frame #80
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,413: frame #81
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,527: frame #82
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,573: frame #83
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,711: frame #84
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,866: frame #85
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:14,965: frame #86
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,090: frame #87
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,233: frame #88
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,330: frame #89
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,415: frame #90
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,548: frame #91
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,617: frame #92
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,760: frame #93
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:15,928: frame #94
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,076: frame #95
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,199: frame #96
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,360: frame #97
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,421: frame #98
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,535: frame #99
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,647: frame #100
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,785: frame #101
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:16,909: frame #102
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:17,079: frame #103
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:17,193: frame #104
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:17,330: frame #105
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:17,374: frame #106
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:17,529: frame #107
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:17,730: frame #108
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:17,883: frame #109
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,070: frame #110
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,182: frame #111
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,333: frame #112
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,395: frame #113
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,509: frame #114
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,673: frame #115
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,807: frame #116
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:18,875: frame #117
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,016: frame #118
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,217: frame #119
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,344: frame #120
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,455: frame #121
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,506: frame #122
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,625: frame #123
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,781: frame #124
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:19,980: frame #125
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:20,126: frame #126
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:20,249: frame #127
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:20,364: frame #128
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:20,476: frame #129
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:20,613: frame #130
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:20,710: frame #131
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:20,911: frame #132
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,055: frame #133
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,175: frame #134
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,271: frame #135
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,330: frame #136
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,399: frame #137
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,511: frame #138
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,664: frame #139
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,794: frame #140
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:21,976: frame #141
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,121: frame #142
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,278: frame #143
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,319: frame #144
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,422: frame #145
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,569: frame #146
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,713: frame #147
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,838: frame #148
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:22,971: frame #149
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,115: frame #150
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,213: frame #151
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,370: frame #152
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,445: frame #153
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,564: frame #154
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,711: frame #155
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,783: frame #156
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:23,935: frame #157
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,079: frame #158
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,225: frame #159
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,339: frame #160
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,444: frame #161
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,549: frame #162
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,673: frame #163
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,817: frame #164
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:24,931: frame #165
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:25,148: frame #166
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:25,256: frame #167
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:25,464: frame #168
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:25,583: frame #169
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:25,664: frame #170
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:25,819: frame #171
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:25,934: frame #172
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,057: frame #173
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,102: frame #174
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,253: frame #175
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,375: frame #176
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,552: frame #177
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,673: frame #178
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,887: frame #179
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:26,993: frame #180
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:27,167: frame #181
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:27,273: frame #182
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:27,409: frame #183
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:27,561: frame #184
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:27,696: frame #185
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:27,802: frame #186
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:27,932: frame #187
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:28,009: frame #188
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:28,135: frame #189
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:28,333: frame #190
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:28,472: frame #191
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:28,647: frame #192
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:28,780: frame #193
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:28,919: frame #194
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:29,035: frame #195
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:29,208: frame #196
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:29,527: frame #197
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:29,799: frame #198
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:29,950: frame #199
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:30,192: frame #200
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:30,366: frame #201
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:30,526: frame #202
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:30,660: frame #203
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:30,846: frame #204
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:30,969: frame #205
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:31,120: frame #206
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:31,220: frame #207
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:31,407: frame #208
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:31,539: frame #209
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:31,707: frame #210
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:31,904: frame #211
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:32,042: frame #212
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:32,221: frame #213
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:32,390: frame #214
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:32,571: frame #215
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:32,721: frame #216
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:32,847: frame #217
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:32,939: frame #218
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:33,073: frame #219
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:33,198: frame #220
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:33,376: frame #221
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:33,503: frame #222
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:33,644: frame #223
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:33,796: frame #224
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:33,961: frame #225
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:34,106: frame #226
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:34,203: frame #227
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:34,346: frame #228
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:34,479: frame #229
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:34,587: frame #230
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:34,726: frame #231
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:34,879: frame #232
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:35,047: frame #233
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:35,233: frame #234
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:35,427: frame #235
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:35,582: frame #236
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:35,736: frame #237
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:35,826: frame #238
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:35,968: frame #239
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,134: frame #240
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,288: frame #241
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,400: frame #242
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,530: frame #243
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,641: frame #244
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,710: frame #245
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,826: frame #246
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:36,939: frame #247
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:37,129: frame #248
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:37,317: frame #249
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:37,494: frame #250
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:37,709: frame #251
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:37,866: frame #252
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:38,033: frame #253
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:38,180: frame #254
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:38,325: frame #255
+[Leona @ asyncstream.py:29][DEBUG] 2017-08-24 15:14:38,427: KeyboardInterrupt
+[Leona @ asyncstream.py:37][DEBUG] 2017-08-24 15:14:38,442: run finished
+[Leona @ datastream.py:483][DEBUG] 2017-08-24 15:14:38,443: stopping
+[Leona @ __init__.py:67][DEBUG] 2017-08-24 15:14:38,444: Serial update exited
+[Leona @ stream.py:235][DEBUG] 2017-08-24 15:14:38,446: Sent last commands
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 15:14:38,449: frame #256
+[Leona @ stream.py:619][DEBUG] 2017-08-24 15:14:38,452: Closing all ports
+[Leona @ stream.py:623][DEBUG] 2017-08-24 15:14:38,455: closing 'actuators'
+[PiCamera @ datastream.py:459][DEBUG] 2017-08-24 15:14:38,500: PiCamera exiting run
+[PiCamera @ datastream.py:465][DEBUG] 2017-08-24 15:14:38,501: run finished
+[PiCamera @ datastream.py:483][DEBUG] 2017-08-24 15:14:38,502: stopping
+[PiCamera @ datastream.py:485][DEBUG] 2017-08-24 15:14:38,503: stopped
+[LeonaPipeline @ datastream.py:459][DEBUG] 2017-08-24 15:14:38,606: LeonaPipeline exiting run
+[LeonaPipeline @ datastream.py:465][DEBUG] 2017-08-24 15:14:38,607: run finished
+[LeonaPipeline @ datastream.py:483][DEBUG] 2017-08-24 15:14:38,608: stopping
+[LeonaPipeline @ datastream.py:485][DEBUG] 2017-08-24 15:14:38,608: stopped

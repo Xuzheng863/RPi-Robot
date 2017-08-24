@@ -43,7 +43,7 @@ class PiCamera(ThreadedStream):
     def start(self):
         self.capture = picamera.PiCamera()
 
-        # self.capture.resolution = (self.capture.resolution[0] // 2, self.capture.resolution[1] // 2)
+        self.capture.resolution = (640, 480)
         self.capture.framerate = self.fps
         self.capture.hflip = True
         self.capture.vflip = True

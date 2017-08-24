@@ -38,7 +38,7 @@ class Leona(SerialStream):
         spin_direction = 150
         safe_w = (160, 480)
         safe_h = (120, 360)
-        default_size = 1000
+        default_size = 10000
         size_scale = 0.8
         while self.is_running():
             if self.pipeline_results is not None:
@@ -46,7 +46,7 @@ class Leona(SerialStream):
                 if self.autonomous:
                     if face == None:
                         status = "search"
-                        self.actuators.spin(spin_direction)
+                        self.actuators.stop()
                     else:
                         status = "adjusting"
                         (x, y, w, h) = face
@@ -62,7 +62,7 @@ class Leona(SerialStream):
                         else:
                             self.status = "steady"
                             self.actuators.stop()
-                    print(status)
+                    # print(face, face_size)
 
         self.logger.debug("Serial update exited")
 

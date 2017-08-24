@@ -1,0 +1,88 @@
+[Robot @ robot.py:101][DEBUG] 2017-08-24 12:38:17,809: Logging to: logs/2017_Aug_24/12;38;17.log
+[Robot @ robot.py:58][DEBUG] 2017-08-24 12:38:17,810: logger initialized: file_name: 12;38;17.log, directory: logs/2017_Aug_24, write: True, log_level: 30
+[Leona @ datastream.py:130][DEBUG] 2017-08-24 12:38:17,823: 'Leona' receiving feed from 'LeonaPipeline' requesting 'results' service
+[CMDline @ datastream.py:130][DEBUG] 2017-08-24 12:38:17,823: 'CMDline' subscribing to 'Leona' 
+[CMDline @ datastream.py:130][DEBUG] 2017-08-24 12:38:17,824: 'CMDline' subscribing to 'PiCamera' 
+[LeonaPipeline @ datastream.py:130][DEBUG] 2017-08-24 12:38:17,824: 'LeonaPipeline' receiving updates from 'PiCamera' 
+[Robot @ robot.py:117][DEBUG] 2017-08-24 12:38:17,825: Active streams: [PiCamera(), Leona(), LeonaPipeline(), CMDline()]
+[Robot @ robot.py:255][DEBUG] 2017-08-24 12:38:17,826: Asynchronous streams: [Leona(), CMDline()]
+[Robot @ robot.py:256][DEBUG] 2017-08-24 12:38:17,826: Threaded streams: [PiCamera(), LeonaPipeline()]
+[Robot @ robot.py:257][DEBUG] 2017-08-24 12:38:17,826: Static streams: []
+[Robot @ robot.py:152][DEBUG] 2017-08-24 12:38:17,827: Applying subscriptions
+[PiCamera @ datastream.py:214][DEBUG] 2017-08-24 12:38:17,827: Checking subscriptions
+[PiCamera @ datastream.py:432][DEBUG] 2017-08-24 12:38:17,827: applying subscriptions: {}
+[Leona @ datastream.py:214][DEBUG] 2017-08-24 12:38:17,827: Checking subscriptions
+[Leona @ datastream.py:432][DEBUG] 2017-08-24 12:38:17,828: applying subscriptions: {'pipeline': Feed(tag='pipeline', producer_stream=LeonaPipeline, consumer_stream=Leona)}
+[LeonaPipeline @ datastream.py:214][DEBUG] 2017-08-24 12:38:17,828: Checking subscriptions
+[LeonaPipeline @ datastream.py:432][DEBUG] 2017-08-24 12:38:17,828: applying subscriptions: {'capture': Update(tag='capture', producer_stream=PiCamera, consumer_stream=LeonaPipeline)}
+[CMDline @ datastream.py:214][DEBUG] 2017-08-24 12:38:17,829: Checking subscriptions
+[CMDline @ datastream.py:432][DEBUG] 2017-08-24 12:38:17,829: applying subscriptions: {'leona': Subscription(tag='leona', producer_stream=Leona, consumer_stream=CMDline), 'capture': Subscription(tag='capture', producer_stream=PiCamera, consumer_stream=CMDline)}
+[Robot @ robot.py:157][DEBUG] 2017-08-24 12:38:17,829: Starting streams, threads have started
+[Robot @ robot.py:159][DEBUG] 2017-08-24 12:38:17,830: Calling PiCamera's start
+[PiCamera @ datastream.py:442][DEBUG] 2017-08-24 12:38:17,830: starting
+[PiCamera @ datastream.py:457][DEBUG] 2017-08-24 12:38:18,297: calling run
+[Robot @ robot.py:159][DEBUG] 2017-08-24 12:38:18,297: Calling Leona's start
+[Leona @ datastream.py:442][DEBUG] 2017-08-24 12:38:18,298: starting
+[Leona @ stream.py:319][DEBUG] 2017-08-24 12:38:18,340: Discovered ports: [SerialPort(port_address=/dev/ttyACM0)]
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 12:38:20,449: frame #0
+[Leona @ stream.py:357][DEBUG] 2017-08-24 12:38:20,556: [/dev/ttyACM0] has ID 'actuators'
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:20,557: <-, actuators, 10	1, object>
+[Leona @ stream.py:272][DEBUG] 2017-08-24 12:38:20,557: First packets sent
+[Robot @ robot.py:159][DEBUG] 2017-08-24 12:38:20,577: Calling LeonaPipeline's start
+[LeonaPipeline @ datastream.py:442][DEBUG] 2017-08-24 12:38:20,583: starting
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 12:38:20,665: frame #1
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 12:38:20,819: frame #2
+[LeonaPipeline @ datastream.py:457][DEBUG] 2017-08-24 12:38:20,836: calling run
+[Robot @ robot.py:159][DEBUG] 2017-08-24 12:38:20,843: Calling CMDline's start
+[CMDline @ datastream.py:442][DEBUG] 2017-08-24 12:38:20,849: starting
+[Robot @ robot.py:163][DEBUG] 2017-08-24 12:38:20,851: Calling setup_fn
+[Robot @ robot.py:128][DEBUG] 2017-08-24 12:38:20,857: Starting coroutine
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:20,934: <2017-08-24 12:38:20,933760, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 12:38:20,976: frame #3
+[LeonaPipeline @ datastream.py:461][DEBUG] 2017-08-24 12:38:21,081: catching exception in run
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 12:38:21,115: frame #4
+[LeonaPipeline @ datastream.py:462][ERROR] 2017-08-24 12:38:21,082: local variable 'face' referenced before assignment
+Traceback (most recent call last):
+  File "/home/pi/.virtualenvs/cv/lib/python3.6/atlasbuggy/datastream/datastream.py", line 458, in _run
+    self.run()
+  File "/home/pi/.virtualenvs/cv/lib/python3.6/atlasbuggy/camera/pipeline.py", line 73, in run
+    self.frame = self.pipeline(self.capture_feed.get())
+  File "/home/pi/Project/Leona/leona/pipeline.py", line 23, in pipeline
+    frame = self.face_detector.haar(frame)
+  File "/home/pi/Project/Leona/leona/pipeline.py", line 47, in haar
+    print(face)
+UnboundLocalError: local variable 'face' referenced before assignment
+[LeonaPipeline @ datastream.py:465][DEBUG] 2017-08-24 12:38:21,196: run finished
+[LeonaPipeline @ datastream.py:483][DEBUG] 2017-08-24 12:38:21,202: stopping
+[LeonaPipeline @ datastream.py:485][DEBUG] 2017-08-24 12:38:21,204: stopped
+[Leona @ __init__.py:67][DEBUG] 2017-08-24 12:38:21,211: Serial update exited
+[Leona @ asyncstream.py:37][DEBUG] 2017-08-24 12:38:21,213: run finished
+[Leona @ datastream.py:483][DEBUG] 2017-08-24 12:38:21,222: stopping
+[Leona @ stream.py:235][DEBUG] 2017-08-24 12:38:21,225: Sent last commands
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 12:38:21,226: frame #5
+[Leona @ stream.py:619][DEBUG] 2017-08-24 12:38:21,227: Closing all ports
+[Leona @ stream.py:623][DEBUG] 2017-08-24 12:38:21,230: closing 'actuators'
+[Leona @ stream.py:629][DEBUG] 2017-08-24 12:38:21,233: [actuators] Port previous packets: read: ['init:10\t1'], write 'h'
+[Leona @ stream.py:635][DEBUG] 2017-08-24 12:38:21,245: /dev/ttyACM0, 'actuators' has exited
+[Leona @ stream.py:640][DEBUG] 2017-08-24 12:38:21,246: All ports exited
+[Leona @ stream.py:237][DEBUG] 2017-08-24 12:38:21,247: Closed ports successfully
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,248: <-, actuators, [None] Checking 'whoareyou' protocol, debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,249: <-, actuators, [None] > 'iamactuators', debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,250: <-, actuators, [None] received packet: 'iamactuators', debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,251: <-, actuators, [actuators] /dev/ttyACM0 has ID 'actuators', debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,252: <-, actuators, [actuators] Checking 'init?' protocol, debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,252: <-, actuators, [actuators] > 'init:10\t1', debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,253: <-, actuators, [actuators] received packet: 'init:10\t1', debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,255: <-, actuators, [actuators] sent initialization data: '10\t1', debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,256: <-, actuators, [actuators] sending start, debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,256: <-, actuators, [actuators] Baud rate unchanged, debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,257: <-, actuators, [actuators] Acquiring exit lock, debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,258: <-, actuators, [actuators] Current buffer: '', debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,259: <-, actuators, [actuators] While loop exited. Exit event triggered., debug>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 12:38:21,260: <-, actuators, [actuators] Releasing exit lock, debug>
+[Leona @ stream.py:603][DEBUG] 2017-08-24 12:38:21,261: Port debug prints recorded
+[Leona @ datastream.py:485][DEBUG] 2017-08-24 12:38:21,262: stopped
+[PiCamera @ datastream.py:459][DEBUG] 2017-08-24 12:38:21,263: PiCamera exiting run
+[PiCamera @ datastream.py:465][DEBUG] 2017-08-24 12:38:21,264: run finished
+[PiCamera @ datastream.py:483][DEBUG] 2017-08-24 12:38:21,265: stopping
+[PiCamera @ datastream.py:485][DEBUG] 2017-08-24 12:38:21,265: stopped
