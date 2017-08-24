@@ -1,0 +1,384 @@
+[Robot @ robot.py:101][DEBUG] 2017-08-24 18:11:21,358: Logging to: logs/2017_Aug_24/18;11;21.log
+[Robot @ robot.py:58][DEBUG] 2017-08-24 18:11:21,359: logger initialized: file_name: 18;11;21.log, directory: logs/2017_Aug_24, write: True, log_level: 30
+[Leona @ datastream.py:130][DEBUG] 2017-08-24 18:11:21,386: 'Leona' receiving feed from 'LeonaPipeline' requesting 'results' service
+[CMDline @ datastream.py:130][DEBUG] 2017-08-24 18:11:21,387: 'CMDline' subscribing to 'Leona' 
+[CMDline @ datastream.py:130][DEBUG] 2017-08-24 18:11:21,388: 'CMDline' subscribing to 'PiCamera' 
+[LeonaPipeline @ datastream.py:130][DEBUG] 2017-08-24 18:11:21,388: 'LeonaPipeline' receiving updates from 'PiCamera' 
+[Robot @ robot.py:117][DEBUG] 2017-08-24 18:11:21,389: Active streams: [PiCamera(), Leona(), LeonaPipeline(), CMDline()]
+[Robot @ robot.py:255][DEBUG] 2017-08-24 18:11:21,391: Asynchronous streams: [Leona(), CMDline()]
+[Robot @ robot.py:256][DEBUG] 2017-08-24 18:11:21,392: Threaded streams: [PiCamera(), LeonaPipeline()]
+[Robot @ robot.py:257][DEBUG] 2017-08-24 18:11:21,392: Static streams: []
+[Robot @ robot.py:152][DEBUG] 2017-08-24 18:11:21,393: Applying subscriptions
+[PiCamera @ datastream.py:214][DEBUG] 2017-08-24 18:11:21,393: Checking subscriptions
+[PiCamera @ datastream.py:432][DEBUG] 2017-08-24 18:11:21,394: applying subscriptions: {}
+[Leona @ datastream.py:214][DEBUG] 2017-08-24 18:11:21,395: Checking subscriptions
+[Leona @ datastream.py:432][DEBUG] 2017-08-24 18:11:21,395: applying subscriptions: {'pipeline': Feed(tag='pipeline', producer_stream=LeonaPipeline, consumer_stream=Leona)}
+[LeonaPipeline @ datastream.py:214][DEBUG] 2017-08-24 18:11:21,396: Checking subscriptions
+[LeonaPipeline @ datastream.py:432][DEBUG] 2017-08-24 18:11:21,397: applying subscriptions: {'capture': Update(tag='capture', producer_stream=PiCamera, consumer_stream=LeonaPipeline)}
+[CMDline @ datastream.py:214][DEBUG] 2017-08-24 18:11:21,397: Checking subscriptions
+[CMDline @ datastream.py:432][DEBUG] 2017-08-24 18:11:21,398: applying subscriptions: {'leona': Subscription(tag='leona', producer_stream=Leona, consumer_stream=CMDline), 'capture': Subscription(tag='capture', producer_stream=PiCamera, consumer_stream=CMDline)}
+[Robot @ robot.py:157][DEBUG] 2017-08-24 18:11:21,398: Starting streams, threads have started
+[Robot @ robot.py:159][DEBUG] 2017-08-24 18:11:21,399: Calling PiCamera's start
+[PiCamera @ datastream.py:442][DEBUG] 2017-08-24 18:11:21,400: starting
+[PiCamera @ datastream.py:457][DEBUG] 2017-08-24 18:11:22,083: calling run
+[Robot @ robot.py:159][DEBUG] 2017-08-24 18:11:22,084: Calling Leona's start
+[Leona @ datastream.py:442][DEBUG] 2017-08-24 18:11:22,085: starting
+[Leona @ stream.py:319][DEBUG] 2017-08-24 18:11:22,176: Discovered ports: [SerialPort(port_address=/dev/ttyACM0)]
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,175: frame #0
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,314: frame #1
+[Leona @ stream.py:357][DEBUG] 2017-08-24 18:11:24,398: [/dev/ttyACM0] has ID 'actuators'
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:24,400: <-, actuators, 10	1, object>
+[Leona @ stream.py:272][DEBUG] 2017-08-24 18:11:24,401: First packets sent
+[Robot @ robot.py:159][DEBUG] 2017-08-24 18:11:24,427: Calling LeonaPipeline's start
+[LeonaPipeline @ datastream.py:442][DEBUG] 2017-08-24 18:11:24,428: starting
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,493: frame #2
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,585: frame #3
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,675: frame #4
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,705: frame #5
+[LeonaPipeline @ datastream.py:457][DEBUG] 2017-08-24 18:11:24,770: calling run
+[Robot @ robot.py:159][DEBUG] 2017-08-24 18:11:24,771: Calling CMDline's start
+[CMDline @ datastream.py:442][DEBUG] 2017-08-24 18:11:24,779: starting
+[Robot @ robot.py:163][DEBUG] 2017-08-24 18:11:24,781: Calling setup_fn
+[Robot @ robot.py:128][DEBUG] 2017-08-24 18:11:24,782: Starting coroutine
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:24,786: <2017-08-24 18:11:24,786082, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,822: frame #6
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:24,929: frame #7
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,023: frame #8
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,043: <2017-08-24 18:11:25,042664, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,133: frame #9
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,138: <2017-08-24 18:11:25,137766, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,225: frame #10
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,242: <2017-08-24 18:11:25,242358, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,289: frame #11
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,340: <2017-08-24 18:11:25,339783, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,366: frame #12
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,447: <2017-08-24 18:11:25,446737, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,467: frame #13
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,553: <2017-08-24 18:11:25,553273, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,572: frame #14
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,644: <2017-08-24 18:11:25,644386, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,678: frame #15
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,759: <2017-08-24 18:11:25,757910, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,774: frame #16
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,845: <2017-08-24 18:11:25,845522, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,886: frame #17
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:25,942: frame #18
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:25,952: <2017-08-24 18:11:25,952392, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,038: frame #19
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,066: <2017-08-24 18:11:26,065628, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,106: frame #20
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,155: <2017-08-24 18:11:26,155075, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,157: frame #21
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,265: <2017-08-24 18:11:26,265218, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,272: frame #22
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,365: frame #23
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,375: <2017-08-24 18:11:26,375498, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,459: frame #24
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,478: <2017-08-24 18:11:26,477771, actuators, r0100, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,569: <2017-08-24 18:11:26,568940, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,575: frame #25
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,614: frame #26
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,685: <2017-08-24 18:11:26,685330, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,717: frame #27
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,770: frame #28
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,786: <2017-08-24 18:11:26,785823, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,838: frame #29
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,881: <2017-08-24 18:11:26,881370, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:26,945: frame #30
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:26,995: <2017-08-24 18:11:26,995142, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,009: frame #31
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,094: <2017-08-24 18:11:27,093642, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,101: frame #32
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,189: <2017-08-24 18:11:27,188899, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,196: frame #33
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,315: <2017-08-24 18:11:27,314924, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,327: frame #34
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,367: frame #35
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,416: <2017-08-24 18:11:27,416057, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,486: frame #36
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,518: frame #37
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,522: <2017-08-24 18:11:27,521751, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,566: frame #38
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,620: <2017-08-24 18:11:27,620013, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,647: frame #39
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,725: <2017-08-24 18:11:27,725281, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,742: frame #40
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,830: <2017-08-24 18:11:27,830372, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,837: frame #41
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:27,931: frame #42
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:27,933: <2017-08-24 18:11:27,932645, actuators, h, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,033: <2017-08-24 18:11:28,032991, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,039: frame #43
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,117: frame #44
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,133: <2017-08-24 18:11:28,133016, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,209: frame #45
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,235: <2017-08-24 18:11:28,235189, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,306: frame #46
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,338: <2017-08-24 18:11:28,338486, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,396: frame #47
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,441: <2017-08-24 18:11:28,441524, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,491: frame #48
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,556: <2017-08-24 18:11:28,555955, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,584: frame #49
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,644: <2017-08-24 18:11:28,643991, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,678: frame #50
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,771: <2017-08-24 18:11:28,770958, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,775: frame #51
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,845: <2017-08-24 18:11:28,844864, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,865: frame #52
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:28,985: <2017-08-24 18:11:28,985601, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:28,987: frame #53
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,024: frame #54
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,049: <2017-08-24 18:11:29,049300, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,131: frame #55
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,206: frame #56
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,217: <2017-08-24 18:11:29,216109, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,254: frame #57
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,309: <2017-08-24 18:11:29,309260, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,335: frame #58
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,410: <2017-08-24 18:11:29,410464, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,429: frame #59
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,518: <2017-08-24 18:11:29,518239, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,523: frame #60
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,615: <2017-08-24 18:11:29,615162, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,633: frame #61
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,710: frame #62
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,715: <2017-08-24 18:11:29,715155, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,826: frame #63
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,836: <2017-08-24 18:11:29,836280, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,867: frame #64
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:29,926: <2017-08-24 18:11:29,926018, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:29,962: frame #65
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,030: <2017-08-24 18:11:30,030380, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,054: frame #66
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,129: <2017-08-24 18:11:30,129547, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,149: frame #67
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,240: <2017-08-24 18:11:30,239943, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,259: frame #68
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,344: <2017-08-24 18:11:30,344204, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,352: frame #69
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,457: frame #70
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,462: <2017-08-24 18:11:30,462088, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,555: frame #71
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,569: <2017-08-24 18:11:30,568602, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,668: frame #72
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,672: <2017-08-24 18:11:30,672024, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,739: frame #73
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,778: <2017-08-24 18:11:30,778069, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,789: frame #74
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,866: frame #75
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,872: <2017-08-24 18:11:30,871497, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:30,976: frame #76
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:30,977: <2017-08-24 18:11:30,977635, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,015: frame #77
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,070: frame #78
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,085: <2017-08-24 18:11:31,085393, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,148: frame #79
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,178: <2017-08-24 18:11:31,177793, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,242: frame #80
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,279: <2017-08-24 18:11:31,279098, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,336: frame #81
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,382: <2017-08-24 18:11:31,381760, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,443: frame #82
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,489: frame #83
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,495: <2017-08-24 18:11:31,494566, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,541: frame #84
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,595: <2017-08-24 18:11:31,594661, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,632: frame #85
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,695: frame #86
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,705: <2017-08-24 18:11:31,704968, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,791: frame #87
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,801: <2017-08-24 18:11:31,801564, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,866: frame #88
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:31,905: <2017-08-24 18:11:31,905176, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:31,959: frame #89
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,004: <2017-08-24 18:11:32,003639, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,071: frame #90
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,117: frame #91
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,121: <2017-08-24 18:11:32,120754, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,225: frame #92
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,235: <2017-08-24 18:11:32,234934, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,289: frame #93
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,318: <2017-08-24 18:11:32,318455, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,368: frame #94
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,445: <2017-08-24 18:11:32,444955, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,461: frame #95
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,523: <2017-08-24 18:11:32,522836, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,566: frame #96
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,623: <2017-08-24 18:11:32,623238, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,664: frame #97
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,724: frame #98
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,746: <2017-08-24 18:11:32,745889, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,768: frame #99
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,827: <2017-08-24 18:11:32,827063, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,866: frame #100
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:32,926: <2017-08-24 18:11:32,925671, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:32,959: frame #101
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,026: <2017-08-24 18:11:33,025653, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,052: frame #102
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,125: <2017-08-24 18:11:33,125138, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,148: frame #103
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,226: <2017-08-24 18:11:33,226195, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,241: frame #104
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,335: frame #105
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,338: <2017-08-24 18:11:33,338551, actuators, r0100, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,463: <2017-08-24 18:11:33,462685, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,470: frame #106
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,521: frame #107
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,567: <2017-08-24 18:11:33,566537, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,616: frame #108
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,672: <2017-08-24 18:11:33,672383, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,709: frame #109
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,772: <2017-08-24 18:11:33,772045, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,803: frame #110
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:33,879: <2017-08-24 18:11:33,875205, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,896: frame #111
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:33,991: frame #112
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,005: <2017-08-24 18:11:34,005533, actuators, h, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,082: <2017-08-24 18:11:34,082235, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,088: frame #113
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,180: frame #114
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,184: <2017-08-24 18:11:34,184571, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,274: frame #115
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,286: <2017-08-24 18:11:34,286422, actuators, h, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,403: <2017-08-24 18:11:34,402955, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,416: frame #116
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,467: frame #117
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,499: <2017-08-24 18:11:34,498917, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,531: frame #118
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,603: <2017-08-24 18:11:34,602655, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,628: frame #119
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,708: <2017-08-24 18:11:34,707942, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,714: frame #120
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,823: <2017-08-24 18:11:34,823441, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,849: frame #121
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,897: frame #122
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:34,965: <2017-08-24 18:11:34,965384, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:34,988: frame #123
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,031: frame #124
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,036: <2017-08-24 18:11:35,035805, actuators, h, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,138: <2017-08-24 18:11:35,138448, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,144: frame #125
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,192: frame #126
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,246: <2017-08-24 18:11:35,245771, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,277: frame #127
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,343: <2017-08-24 18:11:35,342746, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,351: frame #128
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,416: frame #129
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,447: <2017-08-24 18:11:35,446898, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,493: frame #130
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,548: <2017-08-24 18:11:35,548011, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,582: frame #131
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,651: <2017-08-24 18:11:35,651020, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,708: frame #132
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,748: frame #133
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,757: <2017-08-24 18:11:35,757493, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,835: frame #134
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,858: <2017-08-24 18:11:35,858258, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:35,928: frame #135
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:35,960: <2017-08-24 18:11:35,960062, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,024: frame #136
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,062: <2017-08-24 18:11:36,062211, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,132: frame #137
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,160: <2017-08-24 18:11:36,160011, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,173: frame #138
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,207: frame #139
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,246: frame #140
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,261: <2017-08-24 18:11:36,261501, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,349: frame #141
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,373: <2017-08-24 18:11:36,373224, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,436: frame #142
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,474: <2017-08-24 18:11:36,474180, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,522: frame #143
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,570: <2017-08-24 18:11:36,569767, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,615: frame #144
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,735: <2017-08-24 18:11:36,734639, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,742: frame #145
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,772: <2017-08-24 18:11:36,772024, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,833: frame #146
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,866: frame #147
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,877: <2017-08-24 18:11:36,877337, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:36,978: frame #148
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:36,982: <2017-08-24 18:11:36,981806, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,016: frame #149
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,060: frame #150
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,085: <2017-08-24 18:11:37,085550, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,148: frame #151
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,181: <2017-08-24 18:11:37,180915, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,265: frame #152
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,278: <2017-08-24 18:11:37,278330, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,351: frame #153
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,427: frame #154
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,434: <2017-08-24 18:11:37,434124, actuators, r0100, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,502: <2017-08-24 18:11:37,502267, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,524: frame #155
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,616: frame #156
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,620: <2017-08-24 18:11:37,620018, actuators, h, command>
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,709: <2017-08-24 18:11:37,709196, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,723: frame #157
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,768: frame #158
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,803: frame #159
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,817: <2017-08-24 18:11:37,816669, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,910: frame #160
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:37,919: <2017-08-24 18:11:37,919120, actuators, h, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,953: frame #161
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:37,992: frame #162
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,019: <2017-08-24 18:11:38,018954, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,100: frame #163
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,118: <2017-08-24 18:11:38,117780, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,179: frame #164
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,222: <2017-08-24 18:11:38,222295, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,272: frame #165
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,323: <2017-08-24 18:11:38,323224, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,386: frame #166
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,420: <2017-08-24 18:11:38,420431, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,458: frame #167
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,554: <2017-08-24 18:11:38,554453, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,571: frame #168
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,655: <2017-08-24 18:11:38,654984, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,663: frame #169
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,742: frame #170
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,754: <2017-08-24 18:11:38,753863, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,835: frame #171
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,876: <2017-08-24 18:11:38,875895, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,926: frame #172
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:38,967: frame #173
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:38,974: <2017-08-24 18:11:38,974079, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,063: frame #174
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,067: <2017-08-24 18:11:39,067207, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,148: frame #175
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,165: <2017-08-24 18:11:39,164959, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,256: frame #176
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,266: <2017-08-24 18:11:39,266234, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,335: frame #177
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,367: <2017-08-24 18:11:39,366715, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,443: frame #178
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,470: <2017-08-24 18:11:39,469913, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,521: frame #179
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,572: <2017-08-24 18:11:39,572222, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,646: frame #180
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,710: <2017-08-24 18:11:39,709941, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,742: frame #181
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,786: <2017-08-24 18:11:39,785978, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,866: frame #182
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,883: <2017-08-24 18:11:39,883174, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:39,961: frame #183
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:39,985: <2017-08-24 18:11:39,985294, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,053: frame #184
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,090: <2017-08-24 18:11:40,089833, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,146: frame #185
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,192: <2017-08-24 18:11:40,192473, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,241: frame #186
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,293: <2017-08-24 18:11:40,292872, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,335: frame #187
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,399: <2017-08-24 18:11:40,397333, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,443: frame #188
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,499: <2017-08-24 18:11:40,498924, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,547: frame #189
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,586: frame #190
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,597: <2017-08-24 18:11:40,597102, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,674: frame #191
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,717: <2017-08-24 18:11:40,716670, actuators, r0100, command>
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,724: frame #192
+[PiCamera @ picamera.py:126][DEBUG] 2017-08-24 18:11:40,771: frame #193
+[Leona @ stream.py:580][DEBUG] 2017-08-24 18:11:40,825: <2017-08-24 18:11:40,825439, actuators, r0100, command>

@@ -25,11 +25,11 @@ class CMDline(CommandLine):
         self.actuators = self.leona.actuators
 
     def spin_left(self, params):
-        value = int(params) if len(params) > 0 else 75
+        value = int(params) if len(params) > 0 else 150
         self.actuators.spin(value)
 
     def spin_right(self, params):
-        value = int(params) if len(params) > 0 else 75
+        value = int(params) if len(params) > 0 else 150
         self.actuators.spin(-value)
 
     def drive(self, params):
