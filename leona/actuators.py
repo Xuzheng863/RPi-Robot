@@ -41,6 +41,15 @@ class Actuators(SerialObject):
     def release(self):
         self.send("d")
 
+    def lift(self):
+        self.send("u")
+
+    def lower(self):
+        self.send("l")
+
+    def stop_LA(self):
+        self.send("s")
+
     # @staticmethod
     # def constrain_value(value):
     #     if value < 0:

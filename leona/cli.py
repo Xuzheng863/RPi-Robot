@@ -32,6 +32,15 @@ class CMDline(CommandLine):
         value = int(params) if len(params) > 0 else 150
         self.actuators.spin(-value)
 
+    def lift_platform(self):
+        self.actuators.lift()
+
+    def lower_platform(self):
+        self.actuators.lower()
+
+    def stop_platform(self):
+        self.actuators.stop_LA()
+
     def drive(self, params):
         angle = 0
         speed = 200
@@ -107,6 +116,9 @@ class CMDline(CommandLine):
                 q=self.my_exit,
                 l=self.spin_left,
                 r=self.spin_right,
+                up=self.lift_platform,
+                down =self.lower_platform,
+                lastop = self.stop_platform,
                 d=self.drive,
                 s=self.my_stop,
                 start_video=self.start_new_video,

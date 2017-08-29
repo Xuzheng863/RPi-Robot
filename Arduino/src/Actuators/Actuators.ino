@@ -18,6 +18,7 @@ Connect a hobby servo to SERVO1
 
 // Create the motor shield object with the default I2C address
 Adafruit_MotorShield AFMS = Adafruit_MotorShield();
+Adafruit_MotorShield AFMS2 = Adafruit_MotorShield(0x61);
 // Or, create it with a different I2C address (say for stacking)
 // Adafruit_MotorShield AFMS = Adafruit_MotorShield(0x61);
 
@@ -56,10 +57,13 @@ uint32_t ping_timer = millis();
 void setup() {
     robot.begin();
     AFMS.begin();
+    AFMS2.begin();
 
     for (int motor_num = 1; motor_num <= NUM_MOTORS; motor_num++) {
         motors[motor_num - 1] = init_motor(motor_num);
     }
+
+    Adafruit_DCMotor* LinearActuator = AFMS2.getMotor(1);
 
     String speedIncreStr = String(speed_increment);
     String speedDelayStr = String(speed_delay);
@@ -187,6 +191,7 @@ void loop()
     while (robot.available())
     {
         int status = robot.readSerial();
+        int LAstatus = 0;
         if (status == 0) {  // user command
             String command = robot.getCommand();
             if (command.charAt(0) == 'p') {  // drive command
@@ -203,7 +208,6 @@ void loop()
                     speed *= -1;
                     angular *= -1;
                 }
-                Serial.print("run");
                 drive(angle, speed, angular * 2);
                 ping();
             }
@@ -222,21 +226,44 @@ void loop()
             else if (command.charAt(0) == 'r') {  // release command
                 release_motors();
             }
+            else if (command.charAt(0) == 'u') { // lift platform
+                LAstatus = 1;
+            }
+            else if (command.charAt(0) == 'l') { // lower platform
+                LAstatus = 2;
+            }
+            else if (command.charAt(0) == 's') { // stop platform
+                LAstatus = 0;
+            }
         }
         else if (status == 1) {  // stop event
             stop_motors();
+            LAstatus = 0;
             release_motors();
         }
         else if (status == 2) {  // start event
             stop_motors();
+            LAstatus = 0;
         }
     }
 
     if (!robot.isPaused()) {
         update_motors();
+        if (LAstatus == 0) {
+            LinearActuator->run(RELEASE);
+        }
+        if (LAstatus == 1) {
+            LinearActuator->run(FORWARD);
+            LinearActuator->setSpeed(255);
+        }
+        if (LAstatus == 2) {
+            LinearActuator->run(BACKWARD);
+            LinearActuator->setSpeed(255);
+        }
         if (ping_timer > millis())  ping_timer = millis();
         if ((millis() - ping_timer) > 750) {
             stop_motors();
+            LinearActuator->run(RELEASE);
             ping_timer = millis();
         }
     }

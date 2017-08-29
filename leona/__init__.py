@@ -33,11 +33,11 @@ class Leona(SerialStream):
 
     def serial_start(self):
         self.actuators.stop()
+        self.actuators.lower()
 
     def serial_update(self):
-        spin_direction = 150
         safe_w = (220, 420)
-        safe_h = (120, 360)
+        safe_h = (140, 340)
         default_size = 5000
         size_scale = 0.8
         while self.is_running():
@@ -56,6 +56,10 @@ class Leona(SerialStream):
                             self.actuators.spin(-100)
                         elif c[0] > safe_w[1]:
                             self.actuators.spin(100)
+                        elif c[1] < safe_h[0]:
+                            self.actuators.lift()
+                        elif c[1] > safe_h[1]:
+                            self.actuators.lower()
                         elif face_size < default_size * size_scale:
                             self.actuators.drive(-200, 0, 0)
                         elif face_size > default_size / size_scale:
@@ -63,6 +67,7 @@ class Leona(SerialStream):
                         else:
                             self.status = "steady"
                             self.actuators.stop()
+                            self.actuators.stop_LA()
                     # print(face, face_size)
             time.sleep(0.1)
 
@@ -76,16 +81,6 @@ class Leona(SerialStream):
 
         await asyncio.sleep(0.0)
     def receive_actuators(self, timestamp, packet):
-        # if timestamp is None:
-        #     if self.is_subscribed(self.plotter_tag):
-        #         num_leds = self.actuators.num_leds
-        #         for index in range(num_leds):
-        #             led = RobotPlot("LED #%s" % index, marker='.', markersize=30, markeredgecolor='black',
-        #                             x_range=(-2, 2), y_range=(-2, 2), color='black')
-        #             self.led_plot.add_plot(led)
-        #
-        #             led.append(math.cos(-index / num_leds * 2 * math.pi), math.sin(-index / num_leds * 2 * math.pi))
-        #         self.plotter.update_collection(self.led_plot)
         pass
 
     def receive_serial_log(self, timestamp, whoiam, packet, packet_type):
@@ -103,10 +98,3 @@ class Leona(SerialStream):
     def serial_close(self):
         self.actuators.stop()
         self.actuators.release()
-
-        # if self.plotter is not None and self.plotter.enabled:
-        #     if isinstance(self.plotter, StaticPlotter):
-        #         self.exit()
-        #         self.plotter.plot()
-        #     elif isinstance(self.plotter, LivePlotter):
-        #         self.plotter.plot()
