@@ -47,15 +47,15 @@ class Leona(SerialStream):
                 if self.autonomous:
                     if face is None:
                         status = "search"
-                        self.actuators.spin(100)
+                        self.actuators.spin(200)
                     else:
                         status = "adjusting"
                         (x, y, w, h) = face
                         c = (x + w / 2, y + h / 2)
                         if c[0] < safe_w[0]:
-                            self.actuators.spin(-100)
+                            self.actuators.spin(-200)
                         elif c[0] > safe_w[1]:
-                            self.actuators.spin(100)
+                            self.actuators.spin(200)
                         elif c[1] < safe_h[0]:
                             self.actuators.lift()
                         elif c[1] > safe_h[1]:
